@@ -21,6 +21,7 @@ runs:
       run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
     - name : step 3
+      shell: bash
       run: |
         MY_STRING=$(cat << EOF
         first line
@@ -33,5 +34,6 @@ runs:
         echo "EOF" >> $GITHUB_ENV
       id: string-ggen
     - name: display string
+      shell: bash
       run: |
         echo "The string is: ${{ env.MY_STRING }}"
