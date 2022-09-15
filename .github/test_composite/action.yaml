@@ -1,21 +1,34 @@
 name: 'Hello World'
 description: 'Greet someone'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
 outputs:
   random-number:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.random-number }}
+  filter-log:
+    description: "Filtered unit test log"
+    value: ${{ steps.run_unit_tests.outputs.filter-log }}
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
+    - name : rand num
+      run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
     - id: random-number-generator
       run: echo "::set-output name=random-number::$(echo $RANDOM)"
       shell: bash
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      shell: bash          
+      shell: bash
+    - run: |
+        MY_STRING=$(cat << EOF
+        first line
+        second line
+        third line
+        EOF
+        )
+        echo "MY_STRING<<EOF" >> $GITHUB_ENV
+        echo "$MY_STRING" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+      id: string-ggen
+    - name: display string
+      run: |
+        echo "The string is: ${{ env.MY_STRING }}"
