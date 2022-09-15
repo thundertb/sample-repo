@@ -33,7 +33,4 @@ runs:
         echo "$MY_STRING" >> $GITHUB_ENV
         echo "EOF" >> $GITHUB_ENV
       id: string-ggen
-    - name: display string
-      shell: bash
-      run: |
-        echo "The string is: ${{ env.MY_STRING }}"
+    
