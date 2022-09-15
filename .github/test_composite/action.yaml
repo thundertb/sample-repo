@@ -29,12 +29,12 @@ runs:
         third line
         EOF
         )
-        filters_log="${filters_log//'%'/'%25'}"
-        filters_log="${filters_log//$'\n'/'%0A'}"
-        filters_log="${filters_log//$'\r'/'%0D'}"
-        echo "::set-output name=filter-log::$filters_log"
-   #     echo "MY_STRING<<EOF" >> $GITHUB_ENV
-   #     echo "$MY_STRING" >> $GITHUB_ENV
-   #     echo "EOF" >> $GITHUB_ENV
+#        filters_log="${filters_log//'%'/'%25'}"
+#        filters_log="${filters_log//$'\n'/'%0A'}"
+#        filters_log="${filters_log//$'\r'/'%0D'}"
+#        echo "::set-output name=filter-log::$filters_log"
+        echo "MY_STRING<<EOF" >> $GITHUB_ENV
+        echo "$MY_STRING" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
       id: string-ggen
     
