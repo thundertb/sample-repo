@@ -13,12 +13,15 @@ runs:
     - name : rand num
       run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
-    - id: random-number-generator
+    - name : step 1
+      id: random-number-generator
       run: echo "::set-output name=random-number::$(echo $RANDOM)"
       shell: bash
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+    - name : step 2
+      run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
-    - run: |
+    - name : step 3
+      run: |
         MY_STRING=$(cat << EOF
         first line
         second line
