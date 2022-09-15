@@ -6,7 +6,7 @@ outputs:
     value: ${{ steps.random-number-generator.outputs.random-number }}
   filter-log:
     description: "Filtered unit test log"
-    value: ${{ steps.run_unit_tests.outputs.filter-log }}
+    value: ${{ steps.string-ggen.outputs.filter-log }}
 runs:
   using: "composite"
   steps:
@@ -21,7 +21,6 @@ runs:
       run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
     - name : step 3
-      id: run_unit_tests
       shell: bash
       run: |
         MY_STRING=$(cat << EOF
