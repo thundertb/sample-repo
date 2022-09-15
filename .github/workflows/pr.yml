@@ -26,3 +26,7 @@ jobs:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
+      - name: display string
+        shell: bash
+        run: |
+          echo "The string is: ${{ env.MY_STRING }}"
