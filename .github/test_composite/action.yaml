@@ -23,7 +23,7 @@ runs:
     - name : step 3
       shell: bash
       run: |
-        filters_log=$(cat << EOF
+        MY_STRING=$(cat << EOF
         first line
         second line
         third line
