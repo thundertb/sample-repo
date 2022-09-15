@@ -23,13 +23,16 @@ runs:
     - name : step 3
       shell: bash
       run: |
-        MY_STRING=$(cat << EOF
+        filters_log=$(cat << EOF
         first line
         second line
         third line
         EOF
         )
-        echo "::set-output name=filter-log::$MY_STRING"
+        filters_log="${filters_log//'%'/'%25'}"
+        filters_log="${filters_log//$'\n'/'%0A'}"
+        filters_log="${filters_log//$'\r'/'%0D'}"
+        echo "::set-output name=filter-log::$filters_log"
    #     echo "MY_STRING<<EOF" >> $GITHUB_ENV
    #     echo "$MY_STRING" >> $GITHUB_ENV
    #     echo "EOF" >> $GITHUB_ENV
