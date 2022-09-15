@@ -21,6 +21,7 @@ runs:
       run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
     - name : step 3
+      id: run_unit_tests
       shell: bash
       run: |
         MY_STRING=$(cat << EOF
@@ -29,8 +30,9 @@ runs:
         third line
         EOF
         )
-        echo "MY_STRING<<EOF" >> $GITHUB_ENV
-        echo "$MY_STRING" >> $GITHUB_ENV
-        echo "EOF" >> $GITHUB_ENV
+        echo "::set-output name=filter-log::$MY_STRING"
+   #     echo "MY_STRING<<EOF" >> $GITHUB_ENV
+   #     echo "$MY_STRING" >> $GITHUB_ENV
+   #     echo "EOF" >> $GITHUB_ENV
       id: string-ggen
     
