@@ -4,9 +4,9 @@ outputs:
   random-number:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.random-number }}
-  filter-log:
-    description: "Filtered unit test log"
-    value: ${{ steps.string-ggen.outputs.filter-log }}
+#  filter-log:
+#    description: "Filtered unit test log"
+#    value: ${{ steps.string-ggen.outputs.filter-log }}
 runs:
   using: "composite"
   steps:
