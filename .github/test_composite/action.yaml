@@ -27,12 +27,13 @@ runs:
         echo "test_dir=$test_dir"
         echo "::set-output name=output-dir::$(echo "test_dir=$test_dir")"
         echo "test_dir=$test_dir" >> $GITHUB_ENV
-        MY_STRING=$(cat << EOF
-        first line
-        second line
-        third line
-        EOF
-        )
+        MY_STRING=$(ifconfig)
+        #MY_STRING=$(cat << EOF
+        #first line
+        #second line
+        #third line
+        #EOF
+        #)
         #comment
         echo "MY_STRING<<EOF" >> $GITHUB_ENV    
         echo "$MY_STRING" >> $GITHUB_ENV
