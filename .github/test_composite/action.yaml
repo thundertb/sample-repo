@@ -29,7 +29,8 @@ runs:
         third line
         EOF
         )
-        echo "MY_STRING<<EOF" >> $GITHUB_ENV    # comment
+        #comment
+        echo "MY_STRING<<EOF" >> $GITHUB_ENV    
         echo "$MY_STRING" >> $GITHUB_ENV
         echo "EOF" >> $GITHUB_ENV
       id: string-ggen
