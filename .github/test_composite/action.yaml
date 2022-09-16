@@ -23,6 +23,9 @@ runs:
     - name : step 3
       shell: bash
       run: |
+        export test_dir=terraform/test_reports/
+        echo "test_dir=$test_dir"
+        echo "::set-output name=output-dir::$(echo "test_dir=$test_dir")"
         MY_STRING=$(cat << EOF
         first line
         second line
