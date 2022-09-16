@@ -1,0 +1,10 @@
+variable "aws_access_key" {
+default = "AKIAZBSJJXGNQV2USAHA"
+}
+variable "aws_secret_key" {
+default = "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"
+ }
+variable "region" {
+    default = "ap-south-1"
+}
+
