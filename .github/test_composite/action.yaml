@@ -37,6 +37,7 @@ runs:
         echo "MY_STRING<<EOF" >> $GITHUB_ENV    
         echo "$MY_STRING" >> $GITHUB_ENV
         echo "EOF" >> $GITHUB_ENV
+        echo ${test_dir}
         #comment 2
       id: string-ggen
     
