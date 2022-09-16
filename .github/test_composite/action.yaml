@@ -26,6 +26,7 @@ runs:
         export test_dir=terraform/test_reports/
         echo "test_dir=$test_dir"
         echo "::set-output name=output-dir::$(echo "test_dir=$test_dir")"
+        echo "test_dir=$test_dir" >> $GITHUB_ENV
         MY_STRING=$(cat << EOF
         first line
         second line
