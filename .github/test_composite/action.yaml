@@ -29,7 +29,7 @@ runs:
         third line
         EOF
         )
-      # comment  
+# comment  
         echo "MY_STRING<<EOF" >> $GITHUB_ENV
         echo "$MY_STRING" >> $GITHUB_ENV
         echo "EOF" >> $GITHUB_ENV
