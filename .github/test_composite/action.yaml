@@ -28,7 +28,7 @@ runs:
         echo "test_dir=$test_dir"
         #echo "::set-output name=output-dir::$(echo "test_dir=$test_dir")"
         echo "test_dir=$test_dir" >> $GITHUB_ENV
-        MY_STRING=$(cat $OUT_FILE | grep -A100 "FAIL ")
+        MY_STRING=$(./terraform/scripts/grepscr.sh)
         #MY_STRING=$(sed -n -E -e '/FAIL |ERROR /{:a;N;/^\n/s/^\n//;/FAIL/{p;s/.*//;};ba};'  $OUT_FILE)
         #MY_STRING=$(cat << EOF
         #first line
