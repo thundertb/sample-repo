@@ -14,3 +14,4 @@ ENTRYPOINT ["python"]
 
 CMD ["pyapp_tatum.py"]
 testabcd
+last
