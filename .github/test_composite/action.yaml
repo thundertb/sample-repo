@@ -24,10 +24,11 @@ runs:
       shell: bash
       run: |
         export test_dir=terraform/test_reports/
+        export OUT_FILE=terraform/unittest_output.txt
         echo "test_dir=$test_dir"
         #echo "::set-output name=output-dir::$(echo "test_dir=$test_dir")"
         echo "test_dir=$test_dir" >> $GITHUB_ENV
-        MY_STRING=$(ifconfig)
+        MY_STRING=$(sed -n -E -e '/FAIL |ERROR /{:a;N;/^\n/s/^\n//;/FAIL/{p;s/.*//;};ba};'  $OUT_FILE)
         #MY_STRING=$(cat << EOF
         #first line
         #second line
