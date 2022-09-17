@@ -1,3 +1,4 @@
+#!/bin/bash
 export OUT_FILE=terraform/unittest_output.txt
 
 start=$(grep -n "FAIL " $OUT_FILE |cut -f1 -d:|head -n 1)
