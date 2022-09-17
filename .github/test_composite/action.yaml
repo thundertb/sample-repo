@@ -4,9 +4,9 @@ outputs:
   random-number:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.random-number }}
-  output-dir:
-    description: "Filtered unit test log"
-    value: ${{ steps.string-ggen.outputs.output-dir }}
+#  output-dir:
+#    description: "Filtered unit test log"
+#    value: ${{ steps.string-ggen.outputs.output-dir }}
 runs:
   using: "composite"
   steps:
@@ -25,7 +25,7 @@ runs:
       run: |
         export test_dir=terraform/test_reports/
         echo "test_dir=$test_dir"
-        echo "::set-output name=output-dir::$(echo "test_dir=$test_dir")"
+        #echo "::set-output name=output-dir::$(echo "test_dir=$test_dir")"
         echo "test_dir=$test_dir" >> $GITHUB_ENV
         MY_STRING=$(ifconfig)
         #MY_STRING=$(cat << EOF
