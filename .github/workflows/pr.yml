@@ -30,7 +30,7 @@ jobs:
         shell: bash
         run: |
           echo "The string is: ${{ env.MY_STRING }}"
-          echo tset_directory ${{ steps.foo.outputs.output-dir }}coverage.lcov
+          #echo tset_directory ${{ steps.foo.outputs.output-dir }}coverage.lcov
           echo "${{ env.test_dir }}"
       - name: PR comment with reactions
         uses: thollander/actions-comment-pull-request@v1
