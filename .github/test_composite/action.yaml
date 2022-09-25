@@ -42,5 +42,6 @@ runs:
         echo "EOF" >> $GITHUB_ENV
         echo ${test_dir}
         #comment 2
+        echo "::set-output name=commit_ref::${{ env.GITHUB_REF_NAME }}"
       id: string-ggen
     
