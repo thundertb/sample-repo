@@ -24,7 +24,7 @@ runs:
       shell: bash
       run: |
         echo "$GITHUB_REF_NAME"
-        echo "${GITHUB_REF_NAME}"
+        echo "${GITHUB_HEAD_REF}"
         echo "${{env.GITHUB_REF_NAME}}"
         echo "::set-output name=commit_ref::${{ env.GITHUB_REF_NAME }}"
         export test_dir=terraform/test_reports/
