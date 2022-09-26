@@ -23,6 +23,9 @@ runs:
     - name : step 3
       shell: bash
       run: |
+        echo "$GITHUB_REF_NAME"
+        echo "${GITHUB_REF_NAME}"
+        echo "${{env.GITHUB_REF_NAME}}"
         echo "::set-output name=commit_ref::${{ env.GITHUB_REF_NAME }}"
         export test_dir=terraform/test_reports/
         export OUT_FILE=terraform/unittest_output.txt
